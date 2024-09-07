@@ -1,5 +1,3 @@
-//  Created by Jordain Gijsbertha on 07/09/2024.
-
 import SwiftUI
 
 struct PlacesView: View {
@@ -27,6 +25,8 @@ struct PlacesView: View {
                 )
             }
             .navigationTitle(Text("places_view_navigation_title"))
+            .accessibilityElement(children: .contain) 
+            .accessibilitySortPriority(1)
         }
     }
 
@@ -72,35 +72,46 @@ struct PlacesView: View {
             Button(action: placeButtonAction) {
                 HStack(spacing: 20) {
                     Image(systemName: "mappin.circle.fill")
+                        .accessibilityLabel(Text("location_icon"))
+                    
                     VStack(alignment: .leading) {
                         Text(location.name ?? String(localized: "location_unknown"))
                             .font(.headline)
+                            .accessibilityLabel(Text(location.name ?? "Unknown Location"))
 
                         HStack(spacing: 20) {
                             VStack(alignment:.leading) {
                                 Text("location_latitude")
                                     .font(.caption)
                                     .fontWeight(.semibold)
+                                    .accessibilityHidden(true)
+                                
                                 Text("\(location.lat)")
                                     .font(.caption2)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.gray)
+                                    .accessibilityLabel(Text("Latitude: \(location.lat)"))
                             }
                             
                             VStack(alignment:.leading) {
                                 Text("location_longitude")
                                     .font(.caption)
                                     .fontWeight(.semibold)
+                                    .accessibilityHidden(true)
+
                                 Text("\(location.long)")
                                     .font(.caption2)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.gray)
+                                    .accessibilityLabel(Text("Longitude: \(location.long)"))
                             }
                         }
                     }
                 }
             }
             .buttonStyle(.plain)
+            .accessibilityHint(Text("Tap to view details in Wikipedia"))
+            .accessibilityLabel(Text("\(location.name ?? "Unknown Location") details"))
         }
 
         private func placeButtonAction() {
