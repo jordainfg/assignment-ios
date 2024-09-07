@@ -23,13 +23,13 @@ struct PlacesView: View {
                 Alert(
                     title: Text(alert.title),
                     message: Text(alert.description),
-                    dismissButton: .default(Text("Dismiss"))
+                    dismissButton: .default(Text("alert_dismiss_button"))
                 )
             }
-            .navigationTitle("Wikipedia Places")
+            .navigationTitle(Text("places_view_navigation_title"))
         }
     }
-    
+
     private func getLocations() async {
         do {
             locations = try await getLocationsUseCase.getLocations()
@@ -37,8 +37,8 @@ struct PlacesView: View {
             handleGetLocationsError(error)
         } catch {
             alert = WikiPlacesAlert(
-                title: "Unknown Error",
-                description: "An unexpected error occurred. Please try again later."
+                title: String(localized: "alert_unknown_error_title"),
+                description: String(localized: "alert_unknown_error_description")
             )
         }
     }
@@ -47,18 +47,18 @@ struct PlacesView: View {
         switch error {
         case .invalidDomain:
             alert = WikiPlacesAlert(
-                title: "Invalid Domain",
-                description: "The server could not be found. Please check the domain or try again later."
+                title: String(localized: "alert_invalid_domain_title"),
+                description: String(localized: "alert_invalid_domain_description")
             )
         case .notConnectedToInternet:
             alert = WikiPlacesAlert(
-                title: "No Internet Connection",
-                description: "You appear to be offline. Please check your internet connection and try again."
+                title: String(localized: "alert_no_internet_title"),
+                description: String(localized: "alert_no_internet_description")
             )
         case .invalidFormat:
             alert = WikiPlacesAlert(
-                title: "Invalid Data Format",
-                description: "The data received from the server is in an unexpected format. Please contact support."
+                title: String(localized: "alert_invalid_format_title"),
+                description: String(localized: "alert_invalid_format_description")
             )
         }
     }
@@ -73,14 +73,30 @@ struct PlacesView: View {
                 HStack(spacing: 20) {
                     Image(systemName: "mappin.circle.fill")
                     VStack(alignment: .leading) {
-                        Text(location.name ?? "Unknown")
-                            .fontWeight(.bold)
+                        Text(location.name ?? String(localized: "location_unknown"))
+                            .font(.headline)
 
-                        Text("Latitude: \(location.lat)")
-                            .font(.subheadline)
-
-                        Text("Longitude: \(location.long)")
-                            .font(.subheadline)
+                        HStack(spacing: 20) {
+                            VStack(alignment:.leading) {
+                                Text("location_latitude")
+                                    .font(.caption)
+                                    .fontWeight(.semibold)
+                                Text("\(location.lat)")
+                                    .font(.caption2)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.gray)
+                            }
+                            
+                            VStack(alignment:.leading) {
+                                Text("location_longitude")
+                                    .font(.caption)
+                                    .fontWeight(.semibold)
+                                Text("\(location.long)")
+                                    .font(.caption2)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.gray)
+                            }
+                        }
                     }
                 }
             }
