@@ -2,6 +2,7 @@
 
 import Alamofire
 import Foundation
+import OSLog
 
 final class NetworkManager: Network {
     private let session: Session
@@ -30,7 +31,7 @@ final class NetworkManager: Network {
             .response
 
         #if DEBUG
-           // TODO log(response)
+          log(response)
         #endif
 
         switch response.result {
@@ -56,5 +57,27 @@ final class NetworkManager: Network {
         case .failure(let error):
             throw NetworkError(error, responseData: response.data)
         }
+    }
+    
+    private func log<T>(_ response: DataResponse<T, AFError>) {
+        let method = "\(response.request?.urlRequest?.method?.rawValue)"
+        let url = "\(response.request?.urlRequest?.url?.absoluteString.removingPercentEncoding)"
+        let requestBody = "\(json: response.request?.httpBody)"
+        let statusCode = "\(response.response?.statusCode)"
+        let responseBody = "\(json: response.data)"
+
+        let level = switch response.result {
+        case .success:
+            OSLogType.debug
+        case .failure(.responseValidationFailed(.unacceptableStatusCode(let statusCode))) where statusCode >= 500:
+            OSLogType.fault
+        case .failure:
+            OSLogType.error
+        }
+
+        let requestString = "REQUEST \(method) \(url) \(requestBody)"
+        let responseString = "RESPONSE \(statusCode) \(responseBody)"
+
+        Logger.network.log(level: level, "\(requestString)\n\(responseString)")
     }
 }
