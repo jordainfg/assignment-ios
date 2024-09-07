@@ -110,7 +110,7 @@ struct PlacesView: View {
                 }
             }
             .buttonStyle(.plain)
-            .accessibilityHint(Text("Tap to view details in Wikipedia"))
+            .accessibilityHint(Text("tap_to_view_details"))
             .accessibilityLabel(Text("\(location.name ?? "Unknown Location") details"))
         }
 

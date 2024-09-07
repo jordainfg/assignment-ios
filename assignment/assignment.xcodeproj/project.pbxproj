@@ -36,6 +36,8 @@
 		5EDD20212C8C9F1500D40497 /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD20202C8C9F1500D40497 /* PlacesView.swift */; };
 		5EDD20242C8C9F6F00D40497 /* WikiPlacesAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD20232C8C9F6F00D40497 /* WikiPlacesAlert.swift */; };
 		5EDD202B2C8CA1F700D40497 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5EDD202A2C8CA1F700D40497 /* Localizable.xcstrings */; };
+		5EDD202D2C8CAB6500D40497 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD202C2C8CAB6500D40497 /* SettingsView.swift */; };
+		5EDD202F2C8CAB7100D40497 /* ColorSchemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD202E2C8CAB7100D40497 /* ColorSchemeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		5EDD20202C8C9F1500D40497 /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
 		5EDD20232C8C9F6F00D40497 /* WikiPlacesAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPlacesAlert.swift; sourceTree = "<group>"; };
 		5EDD202A2C8CA1F700D40497 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		5EDD202C2C8CAB6500D40497 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5EDD202E2C8CAB7100D40497 /* ColorSchemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				5EDD20202C8C9F1500D40497 /* PlacesView.swift */,
+				5EDD202C2C8CAB6500D40497 /* SettingsView.swift */,
+				5EDD202E2C8CAB7100D40497 /* ColorSchemeView.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EDD20102C8C9CDC00D40497 /* ConsoleLoggerView.swift in Sources */,
+				5EDD202D2C8CAB6500D40497 /* SettingsView.swift in Sources */,
 				5EDD20122C8C9CDC00D40497 /* StringInterpolation+Extensions.swift in Sources */,
 				5EDD201E2C8C9ED700D40497 /* Location.swift in Sources */,
 				5EDD20212C8C9F1500D40497 /* PlacesView.swift in Sources */,
@@ -449,6 +456,7 @@
 				5EDD20002C8C8BBF00D40497 /* Route.swift in Sources */,
 				5EDD20042C8C8D4F00D40497 /* URL+Extensions.swift in Sources */,
 				5EDD1FAF2C8C8AB700D40497 /* ContentView.swift in Sources */,
+				5EDD202F2C8CAB7100D40497 /* ColorSchemeView.swift in Sources */,
 				5EDD1FF82C8C8BBF00D40497 /* JSONEncoder+Extensions.swift in Sources */,
 				5EDD1FAD2C8C8AB700D40497 /* assignmentApp.swift in Sources */,
 				5EDD20012C8C8BBF00D40497 /* AnyEncodable.swift in Sources */,

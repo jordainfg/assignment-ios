@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ details" : {
+
+    },
     "%lf" : {
 
     },
@@ -94,6 +97,49 @@
         }
       }
     },
+    "color_scheme" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color Scheme"
+          }
+        }
+      }
+    },
+    "color_scheme_nav_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color Scheme"
+          }
+        }
+      }
+    },
+    "endable_dark_mode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark Mode"
+          }
+        }
+      }
+    },
+    "Latitude: %lf" : {
+
+    },
+    "location_icon" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location"
+          }
+        }
+      }
+    },
     "location_latitude" : {
       "localizations" : {
         "en" : {
@@ -125,6 +171,9 @@
         }
       }
     },
+    "Longitude: %lf" : {
+
+    },
     "places_view_navigation_title" : {
       "localizations" : {
         "en" : {
@@ -135,12 +184,52 @@
         }
       }
     },
+    "settings_nav_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
     "tab_item_places" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Places"
+          }
+        }
+      }
+    },
+    "tab_item_settings" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "tap_to_view_details" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap to view details in Wikipedia"
+          }
+        }
+      }
+    },
+    "tools" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tools"
           }
         }
       }
