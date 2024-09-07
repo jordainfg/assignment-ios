@@ -28,3 +28,15 @@ extension DependencyContainer {
         DependencyContainer[NetworkKey.self]
     }
 }
+
+// MARK: - LocationsRepository
+
+extension DependencyContainer {
+    private struct LocationsRepositoryKey: InjectionKey {
+        static let value: LocationsRepository = LocationsRepositoryImpl()
+    }
+
+    var locationsRepository: LocationsRepository {
+        DependencyContainer[LocationsRepositoryKey.self]
+    }
+}

@@ -30,6 +30,9 @@
 		5EDD20102C8C9CDC00D40497 /* ConsoleLoggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD200B2C8C9CDC00D40497 /* ConsoleLoggerView.swift */; };
 		5EDD20112C8C9CDC00D40497 /* Logger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD200C2C8C9CDC00D40497 /* Logger+Extensions.swift */; };
 		5EDD20122C8C9CDC00D40497 /* StringInterpolation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD200D2C8C9CDC00D40497 /* StringInterpolation+Extensions.swift */; };
+		5EDD20152C8C9DF700D40497 /* GetLocationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD20142C8C9DF700D40497 /* GetLocationsUseCase.swift */; };
+		5EDD20182C8C9E2A00D40497 /* LocationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD20172C8C9E2A00D40497 /* LocationsRepository.swift */; };
+		5EDD201E2C8C9ED700D40497 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD201D2C8C9ED700D40497 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,9 @@
 		5EDD200B2C8C9CDC00D40497 /* ConsoleLoggerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleLoggerView.swift; sourceTree = "<group>"; };
 		5EDD200C2C8C9CDC00D40497 /* Logger+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logger+Extensions.swift"; sourceTree = "<group>"; };
 		5EDD200D2C8C9CDC00D40497 /* StringInterpolation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringInterpolation+Extensions.swift"; sourceTree = "<group>"; };
+		5EDD20142C8C9DF700D40497 /* GetLocationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationsUseCase.swift; sourceTree = "<group>"; };
+		5EDD20172C8C9E2A00D40497 /* LocationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRepository.swift; sourceTree = "<group>"; };
+		5EDD201D2C8C9ED700D40497 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +133,11 @@
 		5EDD1FAB2C8C8AB700D40497 /* assignment */ = {
 			isa = PBXGroup;
 			children = (
-				5EDD20062C8C900A00D40497 /* Domain */,
 				5EDD20052C8C8DF000D40497 /* Info.plist */,
 				5EDD1FAC2C8C8AB700D40497 /* assignmentApp.swift */,
 				5EDD1FAE2C8C8AB700D40497 /* ContentView.swift */,
 				5EDD1FF22C8C8BBF00D40497 /* NetworkingLayer */,
+				5EDD20062C8C900A00D40497 /* Domain */,
 				5EDD1FB02C8C8AB900D40497 /* Assets.xcassets */,
 				5EDD200E2C8C9CDC00D40497 /* ConsoleLogger */,
 				5EDD1FB22C8C8AB900D40497 /* Preview Content */,
@@ -215,6 +221,7 @@
 		5EDD1FF22C8C8BBF00D40497 /* NetworkingLayer */ = {
 			isa = PBXGroup;
 			children = (
+				5EDD20162C8C9E1900D40497 /* Repositories */,
 				5EDD1FDF2C8C8BBF00D40497 /* Dependency Injection */,
 				5EDD1FE22C8C8BBF00D40497 /* Extensions */,
 				5EDD1FED2C8C8BBF00D40497 /* Network */,
@@ -226,6 +233,8 @@
 		5EDD20062C8C900A00D40497 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				5EDD201C2C8C9EC600D40497 /* Model */,
+				5EDD20132C8C9DE200D40497 /* Use Case */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -238,6 +247,30 @@
 				5EDD200D2C8C9CDC00D40497 /* StringInterpolation+Extensions.swift */,
 			);
 			path = ConsoleLogger;
+			sourceTree = "<group>";
+		};
+		5EDD20132C8C9DE200D40497 /* Use Case */ = {
+			isa = PBXGroup;
+			children = (
+				5EDD20142C8C9DF700D40497 /* GetLocationsUseCase.swift */,
+			);
+			path = "Use Case";
+			sourceTree = "<group>";
+		};
+		5EDD20162C8C9E1900D40497 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				5EDD20172C8C9E2A00D40497 /* LocationsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5EDD201C2C8C9EC600D40497 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EDD201D2C8C9ED700D40497 /* Location.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +411,7 @@
 			files = (
 				5EDD20102C8C9CDC00D40497 /* ConsoleLoggerView.swift in Sources */,
 				5EDD20122C8C9CDC00D40497 /* StringInterpolation+Extensions.swift in Sources */,
+				5EDD201E2C8C9ED700D40497 /* Location.swift in Sources */,
 				5EDD1FFD2C8C8BBF00D40497 /* Network.swift in Sources */,
 				5EDD1FFE2C8C8BBF00D40497 /* NetworkError.swift in Sources */,
 				5EDD1FF52C8C8BBF00D40497 /* Injected.swift in Sources */,
@@ -390,9 +424,11 @@
 				5EDD1FF82C8C8BBF00D40497 /* JSONEncoder+Extensions.swift in Sources */,
 				5EDD1FAD2C8C8AB700D40497 /* assignmentApp.swift in Sources */,
 				5EDD20012C8C8BBF00D40497 /* AnyEncodable.swift in Sources */,
+				5EDD20182C8C9E2A00D40497 /* LocationsRepository.swift in Sources */,
 				5EDD1FF42C8C8BBF00D40497 /* DependencyContainer.swift in Sources */,
 				5EDD1FFF2C8C8BBF00D40497 /* NetworkManager.swift in Sources */,
 				5EDD1FFC2C8C8BBF00D40497 /* Endpoint.swift in Sources */,
+				5EDD20152C8C9DF700D40497 /* GetLocationsUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
