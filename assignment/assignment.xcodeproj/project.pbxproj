@@ -33,6 +33,8 @@
 		5EDD20152C8C9DF700D40497 /* GetLocationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD20142C8C9DF700D40497 /* GetLocationsUseCase.swift */; };
 		5EDD20182C8C9E2A00D40497 /* LocationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD20172C8C9E2A00D40497 /* LocationsRepository.swift */; };
 		5EDD201E2C8C9ED700D40497 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD201D2C8C9ED700D40497 /* Location.swift */; };
+		5EDD20212C8C9F1500D40497 /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD20202C8C9F1500D40497 /* PlacesView.swift */; };
+		5EDD20242C8C9F6F00D40497 /* WikiPlacesAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDD20232C8C9F6F00D40497 /* WikiPlacesAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		5EDD20142C8C9DF700D40497 /* GetLocationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationsUseCase.swift; sourceTree = "<group>"; };
 		5EDD20172C8C9E2A00D40497 /* LocationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRepository.swift; sourceTree = "<group>"; };
 		5EDD201D2C8C9ED700D40497 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		5EDD20202C8C9F1500D40497 /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
+		5EDD20232C8C9F6F00D40497 /* WikiPlacesAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPlacesAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 				5EDD1FAE2C8C8AB700D40497 /* ContentView.swift */,
 				5EDD1FF22C8C8BBF00D40497 /* NetworkingLayer */,
 				5EDD20062C8C900A00D40497 /* Domain */,
+				5EDD201F2C8C9F0500D40497 /* Features */,
+				5EDD20222C8C9F6400D40497 /* Components */,
 				5EDD1FB02C8C8AB900D40497 /* Assets.xcassets */,
 				5EDD200E2C8C9CDC00D40497 /* ConsoleLogger */,
 				5EDD1FB22C8C8AB900D40497 /* Preview Content */,
@@ -271,6 +277,22 @@
 				5EDD201D2C8C9ED700D40497 /* Location.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5EDD201F2C8C9F0500D40497 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				5EDD20202C8C9F1500D40497 /* PlacesView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		5EDD20222C8C9F6400D40497 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5EDD20232C8C9F6F00D40497 /* WikiPlacesAlert.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +434,8 @@
 				5EDD20102C8C9CDC00D40497 /* ConsoleLoggerView.swift in Sources */,
 				5EDD20122C8C9CDC00D40497 /* StringInterpolation+Extensions.swift in Sources */,
 				5EDD201E2C8C9ED700D40497 /* Location.swift in Sources */,
+				5EDD20212C8C9F1500D40497 /* PlacesView.swift in Sources */,
+				5EDD20242C8C9F6F00D40497 /* WikiPlacesAlert.swift in Sources */,
 				5EDD1FFD2C8C8BBF00D40497 /* Network.swift in Sources */,
 				5EDD1FFE2C8C8BBF00D40497 /* NetworkError.swift in Sources */,
 				5EDD1FF52C8C8BBF00D40497 /* Injected.swift in Sources */,
