@@ -3,12 +3,13 @@ import SwiftUI
 struct PlacesView: View {
     @State var locations: [Location] = []
     @State private var alert: WikiPlacesAlert? = nil
+    @State private var placeName: String = ""
 
     private let getLocationsUseCase = GetLocationsUseCase()
 
     var body: some View {
         NavigationStack {
-            List(locations, id: \.id) { location in
+            List(searchResults, id: \.id) { location in
                 LocationRow(location: location)
             }
             .task {
@@ -24,9 +25,20 @@ struct PlacesView: View {
                     dismissButton: .default(Text("alert_dismiss_button"))
                 )
             }
+            .searchable(text: $placeName)
             .navigationTitle(Text("places_view_navigation_title"))
-            .accessibilityElement(children: .contain) 
+            .accessibilityElement(children: .contain)
             .accessibilitySortPriority(1)
+        }
+    }
+
+    var searchResults: [Location] {
+        if placeName.isEmpty {
+            return locations
+        } else {
+            return locations.filter { location in
+                location.name?.lowercased().contains(placeName.lowercased()) ?? false
+            }
         }
     }
 
@@ -73,27 +85,27 @@ struct PlacesView: View {
                 HStack(spacing: 20) {
                     Image(systemName: "mappin.circle.fill")
                         .accessibilityLabel(Text("location_icon"))
-                    
+
                     VStack(alignment: .leading) {
                         Text(location.name ?? String(localized: "location_unknown"))
                             .font(.headline)
                             .accessibilityLabel(Text(location.name ?? "Unknown Location"))
 
                         HStack(spacing: 20) {
-                            VStack(alignment:.leading) {
+                            VStack(alignment: .leading) {
                                 Text("location_latitude")
                                     .font(.caption)
                                     .fontWeight(.semibold)
                                     .accessibilityHidden(true)
-                                
+
                                 Text("\(location.lat)")
                                     .font(.caption2)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.gray)
                                     .accessibilityLabel(Text("Latitude: \(location.lat)"))
                             }
-                            
-                            VStack(alignment:.leading) {
+
+                            VStack(alignment: .leading) {
                                 Text("location_longitude")
                                     .font(.caption)
                                     .fontWeight(.semibold)
@@ -117,13 +129,13 @@ struct PlacesView: View {
         private func placeButtonAction() {
             let queryItems = [
                 URLQueryItem(name: "longitude", value: "\(location.long)"),
-                URLQueryItem(name: "latitude", value: "\(location.lat)")
+                URLQueryItem(name: "latitude", value: "\(location.lat)"),
             ]
-            
+
             if var components = URLComponents(url: URL.wikipedia, resolvingAgainstBaseURL: false) {
                 components.path = "/wiki/places"
                 components.queryItems = queryItems
-                
+
                 if let url = components.url {
                     openURL(url)
                 } else {
